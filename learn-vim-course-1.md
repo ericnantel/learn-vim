@@ -105,14 +105,17 @@ Vim works a bit differently. By default Vim launches in Normal Mode.
 
 To start writing text, you will need to switch to Insert Mode.
 
-* To switch to Normal Mode, press 'ESCAPE'.
-* To switch to Insert Mode, press 'i' in Normal Mode.
-* To switch to Visual Mode, press 'v' in Normal Mode.
-* To switch to Visual Line Mode, press 'SHIFT' + 'v' in Normal Mode.
-* To switch to Visual Block Mode, press 'CTRL' + 'v' or 'CTRL' + 'q' in Normal Mode.
-* To switch to Replace Mode, press 'SHIFT' + 'r' in Normal Mode.
+* To switch to Normal Mode from any Mode, press 'ESCAPE'.
+* To switch to Normal Mode from Insert Mode, press 'CTRL' + 'c'.
+* To switch to Insert Mode from Normal Mode, press 'i'.
+* To switch to Visual Mode from Normal Mode, press 'v'.
+* To switch to Visual Line Mode from Normal Mode, press 'SHIFT' + 'v'.
+* To switch to Visual Block Mode from Normal Mode, press 'CTRL' + 'v' or 'CTRL' + 'q'.
+* To switch to Replace Mode from Normal Mode, press 'SHIFT' + 'r'.
 
-N.B. There are some actions that can switch to Insert Mode as well.
+N.B. There are some more actions that can switch to Insert Mode from Normal Mode.
+
+N.B. In Visual Modes, We automatically return to Normal Mode After Completing an Action with or without a Motion.
 
 ---
 
@@ -167,6 +170,7 @@ To jump cursor at the end of the file:
 
 To jump cursor to a specific line in the file:
 * Press line_number + 'SHIFT' + 'g'
+* Press line_number + 'gg'
 
 ---
 
@@ -183,6 +187,12 @@ To jump cursor to character before first occurence after cursor:
 
 To jump cursor to character before first occurence before cursor:
 * Press 'SHIFT' + 't' + character
+
+To repeat previous navigation with 'f', 'SHIFT' + 'f', 't', 'SHIFT' + 't' in forward:
+* Press ';'
+
+To repeat previous navigation with 'f', 'SHIFT' + 'f', 't', 'SHIFT' + 't' in backward:
+* Press ','
 
 ---
 
@@ -202,13 +212,15 @@ To jump cursor to previous search occurence in the file:
 ## Vim Navigation (5/5)
 
 To jump cursor on the page:
-* Press 'CTRL' + 'u' to jump up
-* Press 'CTRL' + 'd' to jump down
-* Press 'SHIFT' + 'm' to jump middle
+* Press 'CTRL' + 'b' to jump up 1 page
+* Press 'CTRL' + 'f' to jump down 1 page
+* Press 'CTRL' + 'u' to jump up half page
+* Press 'CTRL' + 'd' to jump down half page
+* Press 'SHIFT' + 'm' to jump middle of page
 
 To scroll without moving the cursor:
-* Press 'CTRL' + 'e' to scroll down
-* Press 'CTRL' + 'y' to scroll up
+* Press 'CTRL' + 'e' to scroll down by 1 line
+* Press 'CTRL' + 'y' to scroll up by 1 line
 
 ---
 
@@ -260,11 +272,19 @@ This is an important process, to catch up quickly Vim Actions.
 * Press 'SHIFT' + 's' to delete current line then switch to Insert Mode.
 * Press 'o' to add a new line below cursor, move cursor down then switch to Insert Mode.
 * Press 'SHIFT' + 'o' to add a new line above cursor, move cursor up then switch to Insert Mode.
-* Press '~' to toggle a character between lower and capital case.
+* Press '~' to toggle a character between lower and upper case.
 * Press 'CTRL' + 'a' to increment number under or after cursor.
 * Press 'CTRL' + 'x' to decrement number under or after cursor.
 * Press '=' before or after a Motion to indent using Motion.
 * Press '==' to indent current line.
+* Press 'SHIFT' + 'j' to join line below cursor with current line.
+* Press 'u' after text selection in Visual Modes, to lower case.
+* Press 'SHIFT' + 'u' after text selection in Visual Modes, to upper case.
+* Press '<<' to shift text left on current line (similar to pressing 'SHIFT' + 'TAB' in Insert Mode) in Normal Mode.
+* Press '>>' to shift text right on current line (similar to pressing 'TAB' in Insert Mode) in Normal Mode.
+* Press '<' to shift selected text line or block to the left in Visual Modes.
+* Press '>' to shift selected text line or block to the right in Visual Modes.
+* Press 'CTRL' + 'c' to exit Insert Mode and Enter Normal Mode.
 
 ---
 
@@ -302,9 +322,10 @@ Examples in Normal Mode:
 
 Important motions to know that don't need a count prefix:
 * '0' moves cursor to beginning of the line.
-* '_' moves cursor to first character of the line.
+* '_' moves cursor to first non-blank character of the line.
+* '^^' moves cursor to first non-blank character of the line.
 * '$' moves cursor to end of the line.
-* '%' toggles cursor between matching brackets.
+* '%' toggles cursor between matching brackets ({}, [], []).
 
 ---
 
@@ -358,6 +379,9 @@ For instance, here are a few additional Vim Motions:
 * i{ or i} Means inside curly brackets
 * a[ or a] Means around square brackets
 * i( or i) Means inside parenthesis
+* ib Means inside parenthesis
+* iB Means inside curly brackets
+* it Means inside <> tags
 
 And you can also prefix these Vim Motions with a Count Number.
 
@@ -409,6 +433,10 @@ Useful default Vim keybinds for commands:
 
 ## Conclusion
 
-In the next course, we will talk about Vim registers, marks and macros.
+In the next course, we might talk about:
+* Config, Keybinds and Plugins
+* Registers
+* Marks
+* Macros
 
 Copyright (c) 2025 Eric Nantel

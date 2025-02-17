@@ -136,7 +136,7 @@ A few things you can do in each Modes:
 
 ---
 
-## Vim Navigation (1/2)
+## Vim Navigation (1/5)
 
 Vim's way to navigate the cursor is using the following keys:
 * Press 'h' to move cursor left
@@ -145,6 +145,19 @@ Vim's way to navigate the cursor is using the following keys:
 * Press 'l' to move cursor right
 
 N.B. But you may use arrow keys too.
+
+You can also navigate using these:
+* 'w' moves cursor to next word
+* 'b' moves cursor backward to beginning of word
+* 'e' moves cursor forward to ending of word
+* '{' moves cursor to previous paragraph
+* '}' moves cursor to next paragraph
+
+Words, Brackets and Paragraphs are called Vim Text Objects.
+
+---
+
+## Vim Navigation (2/5)
 
 To jump cursor at the beginning of the file:
 * Press 'gg'
@@ -157,9 +170,25 @@ To jump cursor to a specific line in the file:
 
 ---
 
-## Vim Navigation (2/2)
+## Vim Navigation (3/5)
 
-To jump cursor to next occurence of word under cursor:
+To jump cursor to first occurence of character after cursor:
+* Press 'f' + character
+
+To jump cursor to first occurence of character before cursor:
+* Press 'SHIFT' + 'f' + character
+
+To jump cursor to character before first occurence after cursor:
+* Press 't' + character
+
+To jump cursor to character before first occurence before cursor:
+* Press 'SHIFT' + 't' + character
+
+---
+
+## Vim Navigation (4/5)
+
+To jump cursor to next search occurence of word under cursor:
 * Press '*'
 
 To jump cursor to next search occurence in the file:
@@ -167,6 +196,10 @@ To jump cursor to next search occurence in the file:
 
 To jump cursor to previous search occurence in the file:
 * Press 'SHIFT' + 'n'
+
+---
+
+## Vim Navigation (5/5)
 
 To jump cursor on the page:
 * Press 'CTRL' + 'u' to jump up
@@ -179,7 +212,7 @@ To scroll without moving the cursor:
 
 ---
 
-## Vim Actions (1/3)
+## Vim Actions (1/4)
 
 Remember what each letter means:
 * 'i' means Insert
@@ -197,7 +230,7 @@ This is an important process, to catch up quickly Vim Actions.
 
 ---
 
-## Vim Actions (2/3)
+## Vim Actions (2/4)
 
 * Press 'ESCAPE' to switch to Normal Mode or cancel an Action, Motion or Command.
 * Press 'i' to switch to Insert Mode.
@@ -208,21 +241,26 @@ This is an important process, to catch up quickly Vim Actions.
 * Press 'SHIFT' + 'x' to delete character before cursor.
 * Press 's' to delete character under cursor then switch to Insert Mode.
 * Press 'r' then type a character to replace character under cursor.
-* Press '~' to toggle a character between lower and capital case.
 * Press 'd' before or after a Motion to delete using Motion.
 * Press 'dd' to delete current line.
 * Press 'SHIFT' + 'd' to delete from cursor to end of line.
 * Press 'c' before or after a Motion to delete using Motion then switch to Insert Mode.
 * press 'cc' to delete current line then switch to Insert Mode.
 * Press 'SHIFT' + 'c' to delete from cursor to end of line then switch to Insert Mode.
-* Press 'SHIFT' + 's' to delete current line then switch to Insert Mode.
 * Press 'y' before or after a Motion to copy using Motion.
 * Press 'yy' to copy current line.
 * Press 'SHIFT' + 'y' to copy from cursor to end of line.
 * Press 'p' to paste after cursor.
 * Press 'SHIFT' + 'p' to paste before cursor.
+
+---
+
+## Vim Actions (3/4)
+
+* Press 'SHIFT' + 's' to delete current line then switch to Insert Mode.
 * Press 'o' to add a new line below cursor, move cursor down then switch to Insert Mode.
 * Press 'SHIFT' + 'o' to add a new line above cursor, move cursor up then switch to Insert Mode.
+* Press '~' to toggle a character between lower and capital case.
 * Press 'CTRL' + 'a' to increment number under or after cursor.
 * Press 'CTRL' + 'x' to decrement number under or after cursor.
 * Press '=' before or after a Motion to indent using Motion.
@@ -230,42 +268,31 @@ This is an important process, to catch up quickly Vim Actions.
 
 ---
 
-## Vim Actions (3/3)
+## Vim Actions (4/4)
 
 Most Actions, can be prefixed by a Count Number, which tells how many times we want to repeat the Action.
 
 Examples in Normal Mode:
-* If you type '100' + 'p'. That means we want to paste 100 times below cursor, what we cut.
+* If you type '100' + 'p'. That means we want to paste 100 times after cursor, what we cut.
 * If you type '3' + 'x'. That means we want to remove 3 characters after the cursor.
 * If you type '4' + 'r' + '3'. That means we want to replace 4 characters after the cursor by '3'.
 
-Important actions to know that don't use a count prefix:
+Important actions to know that don't need a count prefix:
 * 'SHIFT' + 'i' Moves cursor at beginning of line then switch to Insert Mode.
 * 'SHIFT' + 'a' Moves cursor at end of line then switch to Insert Mode.
 * 'SHIFT' + 's' Deletes current line then switch to Insert Mode.
-* 'cc' Deletes current line then switch to Insert Mode.
 * 'SHIFT' + 'c' Deletes from cursor to end of line then switch to Insert Mode.
-* 'dd' Deletes current line.
 * 'SHIFT' + 'd' Deletes from cursor to end of line.
-* 'yy' Copies current line.
 
 ---
 
-## Vim Motions (1/3)
+## Vim Motions (1/4)
 
 We have previously seen Vim Navigation 'h', 'j', 'k', 'l'.
+
+And Vim Text Objects like Words, Brackets and Paragraphs.
+
 Those can be prefixed by a Count Number, which tells how many times we want to repeat the Navigation.
-
-But you can also navigate using these:
-* 'w' moves cursor to next word
-* 'b' moves cursor backward to beginning of word
-* 'e' moves cursor forward to ending of word
-* '{' moves cursor to previous paragraph
-* '}' moves cursor to next paragraph
-
-Words, Brackets and Paragraphs are called Vim Text Objects.
-
-And those too, can be prefixed by a Count Number.
 
 Examples in Normal Mode:
 * If you type '6' + 'j'. That means we move the cursor down by 6 lines.
@@ -273,7 +300,7 @@ Examples in Normal Mode:
 * If you type '4' + 'w'. That means we move the cursor right by 4 words.
 * If you type '2' + '{'. That means we move the cursor 2 paragraphs above cursor.
 
-Important motions to know that don't use a count prefix:
+Important motions to know that don't need a count prefix:
 * '0' moves cursor to beginning of the line.
 * '_' moves cursor to first character of the line.
 * '$' moves cursor to end of the line.
@@ -281,20 +308,68 @@ Important motions to know that don't use a count prefix:
 
 ---
 
-## Vim Motions (2/3)
+## Vim Motions (2/4)
 
-TODO: Talk about how we combine actions and motions.
-And the difference between Normal Mode and Visual Modes.
+What you need to understand is that simply using Vim Navigation with or without a count prefix, will only move the cursor in Normal Mode.
+
+In Visual Modes, if you start using Vim Navigation you will notice it selects text from initial cursor position to the current position.
+
+But what actually happens when we use Vim Navigation is we perform a Vim Motion, which is like selecting text between two cursor positions.
+
+A Vim Motion can be combined with a Vim Action.
+
+In Normal Mode, you can type a Vim Action followed by a Vim Motion.
+
+In Visual Modes, you can type a Vim Motion followed by a Vim Action.
+
+In case you wonder, why we need Visual Modes, the reason is simple. Sometimes what we want to select as Vim Motion is complex. For instance, it could be a paragraph and half.
 
 ---
 
-## Vim Motions (3/3)
+## Vim Motions (3/4)
 
-TODO: Provide code examples.
+Examples in Normal Mode:
+* If you type 'd' + '6' + 'w'. That means we delete 6 words forward.
+* If you type 'y' + '2' + 'b'. That means we copy 2 words backward.
+* If you type 'c' + '3' + 'j'. That means we delete current line and 3 lines below cursor then switch to Insert Mode.
+* If you type '2' + 'd' + '5' + 'j'. That means we delete current line then delete 2 times 5 lines below cursor.
+* If you type 'c' + 't' + '('. That means we delete from current cursor position till we find '(' then switch to Insert Mode.
+* If you type 'd' + '0'. That means we delete from current cursor position to beginning of the line.
+* If you type 'y' + '%'. That means copy matching brackets and what's inside. 
+
+Important to know, some actions don't need Motion because they are kind of already, or because they don't support Up and Down Motions.
+However, that might not be the case in Visual Modes. For instance, 'x' deletes a character in Normal Mode and it doesn't need to be combined with a Motion since it is moving forward; although in Visual Modes, 'x' works as 'd'.
+
+Paste is another Vim Action that doesn't require a Motion.
 
 ---
 
-## Vim Commands
+## Vim Motions (4/4)
+
+There are additional Vim Motions, you need to know:
+* i Means inside
+* a Means around
+
+However those need to be combined with a text object.
+For instance, here are a few additional Vim Motions:
+* ip Means inside paragraph
+* ap Means around paragraph
+* iw Means inside words
+* i{ or i} Means inside curly brackets
+* a[ or a] Means around square brackets
+* i( or i) Means inside parenthesis
+
+And you can also prefix these Vim Motions with a Count Number.
+
+Examples in Normal Mode:
+* If you type 'd' + 'ap'. That means delete around paragraph.
+* If you type 'd' + '2' + 'ip'. That means delete inside 2 paragraphs.
+* If you type 'd' + 'iw'. That means delete inside word.
+* If you type 'c' + 'i)'. That means delete inside parenthesis then switch to Insert Mode.
+
+---
+
+## Vim Commands (1/2)
 
 Vim has some builtin commands, but you can also run custom ones.
 
@@ -315,6 +390,11 @@ Important commands to know:
 * ':undo' to undo last change.
 * ':redo' to redo last change.
 * ':split' to split current file.
+* ':line_number' where line_number is where to jump in current file.
+
+---
+
+## Vim Commands (2/2)
 
 To enter a search command, you need to either be in Normal or Visual Mode, then:
 * Press '/' followed by the word, or regex you are looking for then press 'Enter'.

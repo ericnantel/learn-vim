@@ -1,6 +1,10 @@
 # learn-vim
 Slides presentation introducing Vim and why it's a great text editor
 
+# Screenshots
+![img01](/screenshots/learn-vim-img01.png "")
+![img02](/screenshots/learn-vim-img02.png "")
+
 # Prerequisites
 - Install slides or presenterm (for Windows users) on your machine, preferably using a package manager (homebrew, scoop, apt, pacman, etc.).
 - Install vim or neovim on your machine, if not installed already.

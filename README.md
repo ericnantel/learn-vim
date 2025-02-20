@@ -1,9 +1,6 @@
-# learn-vim
-Slides presentation introducing Vim and why it's a great text editor
 
-# Screenshots
-![img01](/screenshots/learn-vim-img01.png "")
-![img02](/screenshots/learn-vim-img02.png "")
+# Full Course Available on YouTube
+[Full Course - Learn Vim (YouTube Link)](https://youtu.be/7fHL0RHgvNQ)
 
 # Prerequisites
 - Install slides or presenterm (for Windows users) on your machine, preferably using a package manager (homebrew, scoop, apt, pacman, etc.).
@@ -21,3 +18,7 @@ presenterm learn-vim-course-1-presenterm.md
 Use your keyboard arrows, to move to previous or next pages.
 
 Use the key 'q' at any time to exit the slides presentation.
+
+# Screenshots
+![img01](/screenshots/learn-vim-img01.png "")
+![img02](/screenshots/learn-vim-img02.png "")

@@ -210,6 +210,9 @@ Vim Navigation (4/5)
 To jump cursor to next search occurence of word under cursor:
 * Press '*'
 
+To jump cursor to previous search occurence of word under cursor:
+* Press '#'
+
 To jump cursor to next search occurence in the file:
 * Press 'n'
 

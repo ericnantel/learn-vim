@@ -2,7 +2,7 @@
 # Full Course Available on YouTube
 [Full Course - Learn Vim Course 1 (YouTube Link)](https://youtu.be/7fHL0RHgvNQ)
 [Full Course - Learn Vim Course 2 (YouTube Link)](https://youtu.be/nOQnmqBrKPg?si=5t3egtjprMhzVvUe)
-
+[Full Course - Learn Vim Course 2 (YouTube Link)](https://youtu.be/yaPkRiBS0aQ?si=dnapm3lUDHeosNLn)
 # Prerequisites
 - Install slides or presenterm (for Windows users) on your machine, preferably using a package manager (homebrew, scoop, apt, pacman, etc.).
 - Install vim or neovim on your machine, if not installed already.

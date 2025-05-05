@@ -78,6 +78,7 @@ endif
 colorscheme darcula
 
 let g:mapleader = ' '
+let g:maplocalleader = ' '
 
 imap jk <ESC>
 vmap jk <ESC>

@@ -1,3 +1,4 @@
+-- NOTE: Uncomment those two lines if using nvim-tree
 -- vim.g.loaded_netrw = 1
 -- vim.g.loaded_netrwPlugin = 1
 
@@ -62,7 +63,7 @@ vim.opt.path:append("**")
 
 vim.opt.background = "dark"
 vim.opt.syntax = on
--- vim.opt.termguicolors = true
+vim.opt.termguicolors = true
 
 -- NOTE: Will be using night-owl (see plugins.lazy.lua)
 -- vim.cmd([[ colorscheme darcula ]])

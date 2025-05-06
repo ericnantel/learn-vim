@@ -1,11 +1,13 @@
 
 # Full Course Available on YouTube
 
-[Full Course - Learn Vim Course 1 (YouTube Link)](https://youtu.be/7fHL0RHgvNQ)
+[Full Courses - Learn VIM Course 1 (YouTube)](https://youtu.be/7fHL0RHgvNQ)
 
-[Full Course - Learn Vim Course 2 (YouTube Link)](https://youtu.be/nOQnmqBrKPg?si=5t3egtjprMhzVvUe)
+[Full Courses - Learn VIM Course 2 (YouTube)](https://youtu.be/nOQnmqBrKPg?si=5t3egtjprMhzVvUe)
 
-[Full Course - Learn Vim Course 3 (YouTube Link)](https://youtu.be/yaPkRiBS0aQ?si=dnapm3lUDHeosNLn)
+[Full Courses - Learn VIM Course 3 (YouTube)](https://youtu.be/yaPkRiBS0aQ?si=dnapm3lUDHeosNLn)
+
+[Full Courses - Learn VIM Condensed Recap (YouTube)](https://youtu.be/iA11DckZZfl)
 
 # Prerequisites
 - Install slides or presenterm (for Windows users) on your machine, preferably using a package manager (homebrew, scoop, apt, pacman, etc.).

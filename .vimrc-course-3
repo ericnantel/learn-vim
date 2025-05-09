@@ -83,13 +83,15 @@ let g:maplocalleader = ' '
 imap jk <ESC>
 vmap jk <ESC>
 
-nmap + <C-a>
-nmap - <C-x>
+nnoremap + <C-a>
+nnoremap - <C-x>
 
 nmap <leader>sv <C-w>v
 nmap <leader>sh <C-w>s
 nmap <leader>se <C-w>=
 nmap <leader>sx <cmd>close<CR>
+
+nmap <leader>nh <cmd>nohlsearch<CR>
 
 " vim-tmux-navigator
 nnoremap <silent> <c-h> <cmd>TmuxNavigateLeft<CR>
@@ -137,6 +139,48 @@ let g:gitgutter_enabled = 1
 let g:gitgutter_signs = 1
 let g:gitgutter_async = 1
 
+" vim-fugitive
+"
+
+" vim-which-key
+nnoremap <silent> <leader> :<c-u>WhichKey '<Space>'<CR>
+vnoremap <silent> <leader> :<c-u>WhichKeyVisual '<Space>'<CR>
+let g:which_key_ignore_outside_mappings = 0
+let g:which_key_use_floating_win = 1
+let g:which_key_max_size = 0
+let g:which_key_sep = "->"
+let g:which_key_map = {}
+let g:which_key_map['+'] = ['<C-a>', "number-increment"]
+let g:which_key_map['-'] = ['<C-x>', "number-decrement"]
+let g:which_key_map.s = {
+	\ 'name': "+split",
+	\ 'v': ['<C-w>v', "split-vertical"],
+	\ 'h': ['<C-w>s', "split-horizontal"],
+	\ 'e': ['<C-w>=', "split-equal"],
+	\ 'm': [':MaximizerToggle', "split-maximize-toggle"],
+	\ 'x': [':close', "split-close"],
+	\ '<Right>': ['<C-w>5>', "split-increment-width"],
+	\ '<Left>': ['<C-w>5<', "split-decrement-width"],
+	\ '<Down>': ['<C-w>+', "split-increment-height"],
+	\ '<Up>': ['<C-w>-', "split-decrement-height"],
+  \ }
+let g:which_key_map['nh'] = [':nohlsearch', "suspend-hlsearch-highlighting"]
+let g:which_key_map_visual = {}
+let g:which_key_map_visual['+'] = ['<C-a>', "number-increment"]
+let g:which_key_map_visual['-'] = ['<C-x>', "number-decrement"]
+let g:which_key_map_visual.s = {
+	\ 'name': "+split",
+	\ 'v': ['<C-w>v', "split-vertical"],
+	\ 'h': ['<C-w>s', "split-horizontal"],
+	\ 'e': ['<C-w>=', "split-equal"],
+	\ 'm': [':MaximizerToggle<CR>gv', "split-maximize-toggle"],
+	\ 'x': [':close', "split-close"],
+	\ '<Right>': ['<C-w>5>', "split-increment-width"],
+	\ '<Left>': ['<C-w>5<', "split-decrement-width"],
+	\ '<Down>': ['<C-w>+', "split-increment-height"],
+	\ '<Up>': ['<C-w>-', "split-decrement-height"],
+  \ }
+
 " Plugins
 " Dependencies:
 " vim-plug -> git, curl (optional to download plug.vim)
@@ -149,6 +193,7 @@ let g:gitgutter_async = 1
 " vim-airline-themes ->
 " vim-gitgutter -> git
 " vim-fugitive -> git
+" vim-which-key ->
 call plug#begin('~/.vim/plugged')
 	" Make sure to use single quotes
 	Plug 'christoomey/vim-tmux-navigator'
@@ -160,5 +205,9 @@ call plug#begin('~/.vim/plugged')
 	Plug 'vim-airline/vim-airline-themes'
 	Plug 'airblade/vim-gitgutter'
 	Plug 'tpope/vim-fugitive'
+	Plug 'liuchengxu/vim-which-key'
 call plug#end()
+
+call which_key#register('<Space>', "g:which_key_map", 'n')
+call which_key#register('<Space>', "g:which_key_map_visual", 'v')
 
